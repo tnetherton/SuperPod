@@ -1,0 +1,65 @@
+# Local Python environments, caches, and tooling
+.venv/
+venv/
+env/
+.*.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage*
+htmlcov/
+*.egg-info/
+
+# Build artifacts and editor/OS metadata
+build/
+builds/
+dist/
+*.spec
+*.exe
+*.AppImage
+*.dmg
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Medical imaging and possible patient-data exports: never commit real data.
+# These patterns cannot catch every file or image; inspect staged files manually.
+data/
+datasets/
+samples/
+examples/data/
+output/
+outputs/
+exports/
+*.dcm
+*.dicom
+*.ima
+*.nii
+*.nii.gz
+*.nrrd
+*.mha
+*.mhd
+*.tif
+*.tiff
+*.png
+*.jpg
+*.jpeg
+*.csv
+*.tsv
+*.jsonl
+*.log
