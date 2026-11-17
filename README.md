@@ -4,6 +4,7 @@ SuperPod provides simple, useful tools for the global medical physics community.
 
 | Tool | What it does | Run from the repository root |
 | --- | --- | --- |
+| [DICOM Contour Compare](dicom-contour-compare/README.md) | Selects and compares RTSTRUCT contours, calculates Dice similarity and mean surface distance, and generates CT overlay figures. | `python dicom-contour-compare/src/contour-compare.py` |
 | [DICOM Inspect](dicom-inspect/README.md) | Inspects one `.dcm` file from each subdirectory and exports selected DICOM metadata to `dicom_metadata.csv`. | `python dicom-inspect/src/inspect-dicom.py` |
 | [DICOM Quick Edit](dicom-quick-edit/README.md) | Displays and edits selected textual/numeric metadata in one `.dcm` file; saves beside the original. | `python dicom-quick-edit/src/dicom-quick-edit.py` |
 | [DICOM Viewer](dicom-viewer/README.md) | Displays CT/MR image series in three planes, with optional RTSTRUCT contour overlays. | `python dicom-viewer/src/dicom_viewer.py` |
@@ -33,9 +34,10 @@ python -m pip install -r dicom-quick-edit/requirements.txt
 python dicom-quick-edit/src/dicom-quick-edit.py
 ```
 
-Replace `dicom-quick-edit` with `dicom-inspect` or `dicom-viewer` to run another tool. Deactivate the current environment first with `deactivate`. Dependency lists for Inspect and Viewer are broad pinned environment snapshots; they may contain optional or platform-specific packages. See the individual READMEs for each application's workflow and platform-specific build instructions.
+Replace `dicom-quick-edit` with `dicom-contour-compare`, `dicom-inspect`, or `dicom-viewer` to run another tool. Deactivate the current environment first with `deactivate`. Dependency lists for Inspect and Viewer are broad pinned environment snapshots; they may contain optional or platform-specific packages. See the individual READMEs for each application's workflow and platform-specific build instructions.
 
 
+- **Contour Compare** compares selected RTSTRUCT contours against a chosen ground truth; review the individual README for conversion limitations and metric definitions before interpreting results.
 - **Inspect** exports fields including patient name, patient ID, birth date, accession number, referring physician, and identifiers. 
 - **Quick Edit** changes only selected fields; it does **not** anonymize files or remove private/nested tags, pixel annotations, or identifiers in related objects. Back up originals and validate edited files before use.
 - **Viewer** loads local images and RTSTRUCT contours for inspection; it is not a diagnostic viewer or a clinically validated treatment-planning tool. Do not rely on its overlays for clinical decisions without independent validation.
